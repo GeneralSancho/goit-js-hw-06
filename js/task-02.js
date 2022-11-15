@@ -7,23 +7,12 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
-// document.createElement()
-const ulEl = document.querySelector(`#ingredients`);
-// const liEl = ingredients.length;
-// for (let i = 0; i < ingredients.length; i+=1) {
-//   const ingredientsItemEl = document.createElement("li");
-//   ingredientsItemEl.textContent = ingredients[i];
-//   ingredientsItemEl.class = "item";
-//   ulEl.append(ingredientsItemEl);
 
-// console.log(ulEl);
-// console.log(ingredientsItemEl.class);
-
-// }
-
- ingredients.map(el => {
-  const ingredientsItemEl = document.createElement("li")
-  ingredientsItemEl.textContent = el;
-  ingredientsItemEl.class = "item"
-  ulEl.append(ingredientsItemEl);
-})
+const ulEl = document.querySelector('#ingredients')
+const addLi = ingredients.map(ingredient => {
+  const liEl = document.createElement('li');
+  liEl.classList = 'item';
+  liEl.textContent = ingredient;
+  return liEl;
+});
+ulEl.append(...addLi);
